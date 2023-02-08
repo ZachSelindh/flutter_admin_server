@@ -7,7 +7,7 @@ router.get('/hello-world', (request: Request, response: Response) => {
 });
 
 router.get('./users', (request: Request, response: Response) => {
-    response.send('Users');
+    response.send('Users page');
 })
 
 router.get('/*', (request: Request, response: Response) => {
