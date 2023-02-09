@@ -6,7 +6,7 @@ router.get('/hello-world', (request: Request, response: Response) => {
     response.send('Hello world!');
 });
 
-router.get('./users', (request: Request, response: Response) => {
+router.get('/users', (request: Request, response: Response) => {
     response.send('Users page');
 })
 
