@@ -3,13 +3,19 @@ import * as mongoose from 'mongoose';
 import { UserType } from './user_type';
 import '../models/user';
 
-const { GraphQLObjectType, GraphQLID, GraphQLNonNull } = graphql;
+const { GraphQLObjectType, GraphQLList, GraphQLID, GraphQLNonNull } = graphql;
 
 const User = mongoose.model('user');
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: () => ({
+    users: {
+      type: new GraphQLList(UserType),
+      resolve() {
+        return User.find({});
+      },
+    },
     user: {
       type: UserType,
       args: { id: { type: new GraphQLNonNull(GraphQLID) } },

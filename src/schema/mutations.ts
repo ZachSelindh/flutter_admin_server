@@ -9,7 +9,7 @@ const User = mongoose.model('user');
 const mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
-    addSong: {
+    addUser: {
       type: UserType,
       args: {
         title: { type: GraphQLString },
