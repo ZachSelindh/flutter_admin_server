@@ -4,7 +4,7 @@
   "description": "GraphQL/Node server for Flutter Admin test",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc",
+    "build": "npm install && npx tsc",
     "dev": "nodemon dist/server.js",
     "ts-node": "npx ts-node src/server.ts",
     "start": "node dist/server.js"
