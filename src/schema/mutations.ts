@@ -12,7 +12,8 @@ const mutation = new GraphQLObjectType({
     addUser: {
       type: UserType,
       args: {
-        title: { type: GraphQLString },
+        name: { type: GraphQLString },
+        email: { type: GraphQLString },
       },
       resolve(parentValue, { name, email }) {
         return new User({ name, email }).save();
